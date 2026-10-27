@@ -3,49 +3,133 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Librería Independiente Raíz: historias, lecturas y autores para conectar con nuestras raíces.">
     <title>Librería Independiente Raíz</title>
     <link rel="stylesheet" href="css/estilos.css">
-    <script src="js/app.js" defer></script>
 </head>
-<body>
+<body id="inicio">
+
     <header class="encabezado">
-        <h1>Librería Independiente Raíz</h1>
-        <p>Historias que conectan con nuestras raíces</p>
-        <nav>
-            <a href="index.html">Inicio</a>
-            <a href="paginas/nosotros.html">Nosotros</a>
-            <a href="paginas/contacto.html">Contacto</a>
+        <a class="marca" href="#inicio" aria-label="Librería Raíz, inicio">
+            <span class="marca-icono" aria-hidden="true">R.</span>
+            <span>Librería Independiente <strong>Raíz</strong></span>
+        </a>
+
+        <nav class="navegacion" aria-label="Navegación principal">
+            <a href="#inicio">Inicio</a>
+            <a href="#nosotros">Nuestra filosofía</a>
+            <a href="#catalogo">Libros</a>
+            <a href="#contacto">Contacto</a>
         </nav>
     </header>
 
     <main>
         <section class="bienvenida">
-            <h2>Bienvenido a Raíz</h2>
-            <p>Un espacio para descubrir libros, autores independientes
-            y nuevas formas de mirar el mundo.</p>
-            <button id="botonMensaje">Descubre nuestra filosofía</button>
-            <p id="mensaje" aria-live="polite"></p>
+            <div class="bienvenida-contenido">
+                <p class="etiqueta">LECTURAS CON SENTIDO · LIBROS CON HISTORIA</p>
+                <h1>Hay historias que nos ayudan a <em>echar raíces.</em></h1>
+                <p class="texto-intro">
+                    Un espacio para descubrir libros, explorar nuevas ideas
+                    y conectar con historias que dejan huella.
+                </p>
+                <a class="boton-principal" href="#catalogo">
+                    Explorar lecturas <span aria-hidden="true">→</span>
+                </a>
+                <p class="lema">Historias que conectan con nuestras raíces.</p>
+            </div>
+
+            <div class="ilustracion-libros" aria-label="Ilustración decorativa de libros">
+                <div class="libro-visual libro-uno">
+                    <span>RAÍCES</span>
+                    <strong>Historias<br>que perduran</strong>
+                    <small>Una lectura, mil caminos</small>
+                </div>
+                <div class="libro-visual libro-dos">
+                    <span>EL ARTE DE LEER</span>
+                </div>
+                <div class="sello">Leer<br>nos une</div>
+            </div>
         </section>
 
-        <section class="catalogo">
-            <h2>Libros recomendados</h2>
-            <article class="libro">
-                <h3>El principito</h3>
-                <p>Una historia sobre la amistad, la imaginación y lo esencial.</p>
-            </article>
-            <article class="libro">
-                <h3>Cuentos de la naturaleza</h3>
-                <p>Lecturas para reconectar con el planeta y sus historias.</p>
-            </article>
-            <article class="libro">
-                <h3>Voces independientes</h3>
-                <p>Descubre nuevas ideas de escritores y editoriales independientes.</p>
-            </article>
+        <section class="filosofia" id="nosotros">
+            <p class="etiqueta">MÁS QUE UNA LIBRERÍA</p>
+            <h2>Creemos en el poder de las historias.</h2>
+            <p>
+                En Raíz creemos que cada libro abre una puerta: a otras culturas,
+                nuevas preguntas y distintas maneras de comprender el mundo.
+                Queremos acercar a los lectores a historias que inspiren,
+                acompañen y permanezcan en la memoria.
+            </p>
+        </section>
+
+        <section class="catalogo" id="catalogo">
+            <div class="titulo-seccion">
+                <div>
+                    <p class="etiqueta">NUESTRAS RECOMENDACIONES</p>
+                    <h2>Una historia para cada momento</h2>
+                </div>
+                <p>Empieza tu próximo viaje entre páginas.</p>
+            </div>
+
+            <div class="libros-grid">
+                <article class="libro">
+                    <div class="portada portada-uno" aria-hidden="true">
+                        <span>ANTOINE DE SAINT-EXUPÉRY</span>
+                        <strong>El<br>principito</strong>
+                        <small>Una historia inolvidable</small>
+                    </div>
+                    <div class="libro-info">
+                        <p class="categoria">CLÁSICOS</p>
+                        <h3>El principito</h3>
+                        <p>Una historia sobre la amistad, la imaginación y aquello que realmente importa.</p>
+                    </div>
+                </article>
+
+                <article class="libro">
+                    <div class="portada portada-dos" aria-hidden="true">
+                        <span>LECTURAS PARA CONTEMPLAR</span>
+                        <strong>Cuentos de<br>la naturaleza</strong>
+                        <small>La vida también cuenta historias</small>
+                    </div>
+                    <div class="libro-info">
+                        <p class="categoria">NATURALEZA</p>
+                        <h3>Cuentos de la naturaleza</h3>
+                        <p>Relatos para mirar el planeta con curiosidad y reconectar con nuestro entorno.</p>
+                    </div>
+                </article>
+
+                <article class="libro">
+                    <div class="portada portada-tres" aria-hidden="true">
+                        <span>NUEVAS PERSPECTIVAS</span>
+                        <strong>Voces<br>independientes</strong>
+                        <small>Ideas que merecen ser escuchadas</small>
+                    </div>
+                    <div class="libro-info">
+                        <p class="categoria">NUEVOS AUTORES</p>
+                        <h3>Voces independientes</h3>
+                        <p>Una invitación a descubrir otras miradas, nuevas ideas y propuestas literarias.</p>
+                    </div>
+                </article>
+            </div>
+            <p class="nota-catalogo">
+                Selección editorial de muestra. Consulta la disponibilidad de títulos
+                antes de realizar una compra.
+            </p>
+        </section>
+
+        <section class="cierre" id="contacto">
+            <p class="etiqueta">TU PRÓXIMA LECTURA TE ESPERA</p>
+            <h2>Las mejores historias empiezan con una página.</h2>
+            <p>Explora, descubre y encuentra esa historia que conecte contigo.</p>
+            <a class="boton-secundario" href="#catalogo">Descubrir libros</a>
         </section>
     </main>
 
-    <footer>
-        <p>&copy; 2026 Librería Independiente Raíz</p>
+    <footer class="pie-pagina">
+        <a class="marca marca-footer" href="#inicio">R. <strong>Raíz</strong></a>
+        <p>Historias que conectan con nuestras raíces.</p>
+        <p>&copy; 2026 Librería Independiente Raíz. Proyecto académico.</p>
     </footer>
+
 </body>
 </html>
