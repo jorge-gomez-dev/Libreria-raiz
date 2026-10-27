@@ -1,95 +1,671 @@
-/* Estilos de Librería Independiente Raíz */
+/* ========================================
+   LIBRERÍA INDEPENDIENTE RAÍZ
+   Identidad editorial: bosque, papel y tierra
+   ======================================== */
+
+:root {
+    --verde: #244638;
+    --verde-oscuro: #183429;
+    --verde-suave: #dce6d8;
+    --crema: #f8f5ed;
+    --papel: #fffdf8;
+    --terracota: #b96648;
+    --terracota-claro: #e9c5ae;
+    --texto: #29342c;
+    --texto-suave: #687166;
+    --borde: #e6e0d4;
+    --sombra: 0 16px 40px rgba(36, 70, 56, 0.09);
+}
 
 * {
     box-sizing: border-box;
-    margin: 0;
-    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f5f0e6;
-    color: #2e3b2f;
+    margin: 0;
+    background: var(--papel);
+    color: var(--texto);
+    font-family: "Trebuchet MS", Arial, sans-serif;
+    line-height: 1.7;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+a {
+    -webkit-tap-highlight-color: transparent;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--terracota);
+    outline-offset: 4px;
+}
+
+/* ENCABEZADO */
+
+.encabezado {
+    min-height: 88px;
+    padding: 18px 7%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 28px;
+    background: var(--papel);
+    border-bottom: 1px solid var(--borde);
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: var(--verde);
+    font-size: 14px;
+    letter-spacing: 0.02em;
+}
+
+.marca strong {
+    font-weight: 800;
+}
+
+.marca-icono {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    border-radius: 50%;
+    background: var(--verde);
+    color: var(--crema);
+    font-family: Georgia, serif;
+    font-size: 24px;
+}
+
+.navegacion {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.navegacion a {
+    color: var(--texto-suave);
+    font-size: 13px;
+    font-weight: 700;
+    transition: color 0.2s ease;
+}
+
+.navegacion a:hover {
+    color: var(--terracota);
+}
+
+/* PORTADA PRINCIPAL */
+
+.bienvenida {
+    position: relative;
+    overflow: hidden;
+    min-height: 550px;
+    padding: 76px 9%;
+    display: grid;
+    grid-template-columns: 1.15fr 0.85fr;
+    align-items: center;
+    gap: 55px;
+    background:
+        radial-gradient(ellipse at 85% 15%, rgba(233, 197, 174, 0.32), transparent 32%),
+        var(--crema);
+}
+
+.bienvenida-contenido {
+    max-width: 620px;
+    position: relative;
+    z-index: 1;
+}
+
+.etiqueta {
+    margin: 0 0 18px;
+    color: var(--terracota);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.19em;
     line-height: 1.6;
 }
 
-header {
-    background-color: #244b36;
+.bienvenida h1,
+.filosofia h2,
+.titulo-seccion h2,
+.cierre h2 {
+    margin: 0;
+    font-family: Georgia, "Times New Roman", serif;
+    font-weight: 500;
+    letter-spacing: -0.045em;
+    line-height: 1.13;
+}
+
+.bienvenida h1 {
+    max-width: 620px;
+    color: var(--verde-oscuro);
+    font-size: clamp(42px, 5.2vw, 69px);
+}
+
+.bienvenida h1 em {
+    color: var(--terracota);
+    font-weight: 400;
+}
+
+.texto-intro {
+    max-width: 450px;
+    margin: 24px 0;
+    color: var(--texto-suave);
+    font-size: 16px;
+}
+
+.boton-principal,
+.boton-secundario {
+    min-height: 50px;
+    padding: 13px 22px;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    background: var(--verde);
     color: white;
+    border: 1px solid var(--verde);
+    border-radius: 3px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.boton-principal:hover,
+.boton-secundario:hover {
+    background: var(--verde-oscuro);
+    transform: translateY(-2px);
+}
+
+.lema {
+    margin: 25px 0 0;
+    color: var(--texto-suave);
+    font-family: Georgia, serif;
+    font-size: 13px;
+    font-style: italic;
+}
+
+/* ILUSTRACIÓN EDITORIAL DE LIBROS */
+
+.ilustracion-libros {
+    min-height: 340px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    isolation: isolate;
+}
+
+.ilustracion-libros::before {
+    content: "";
+    width: 290px;
+    height: 290px;
+    position: absolute;
+    z-index: -1;
+    border: 1px solid rgba(36, 70, 56, 0.16);
+    border-radius: 50%;
+}
+
+.libro-visual {
+    position: absolute;
+    width: 190px;
+    min-height: 270px;
+    padding: 25px 19px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    box-shadow: 9px 14px 24px rgba(32, 43, 32, 0.17);
+}
+
+.libro-visual span {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+}
+
+.libro-visual strong {
+    font-family: Georgia, serif;
+    font-size: 28px;
+    line-height: 1.18;
+}
+
+.libro-visual small {
+    font-size: 9px;
+}
+
+.libro-uno {
+    z-index: 2;
+    left: 12%;
+    top: 30px;
+    background: var(--verde);
+    color: var(--crema);
+    transform: rotate(-8deg);
+}
+
+.libro-dos {
+    z-index: 1;
+    right: 8%;
+    bottom: 24px;
+    min-height: 240px;
+    background: var(--terracota);
+    color: white;
+    transform: rotate(9deg);
+}
+
+.sello {
+    position: absolute;
+    z-index: 3;
+    right: 2%;
+    top: 18px;
+    width: 86px;
+    height: 86px;
+    display: grid;
+    place-items: center;
+    border: 1px solid var(--terracota);
+    border-radius: 50%;
+    background: var(--crema);
+    color: var(--terracota);
+    font-family: Georgia, serif;
+    font-size: 14px;
+    line-height: 1.25;
     text-align: center;
-    padding: 30px 20px;
+    transform: rotate(9deg);
 }
 
-header h1 {
-    font-size: 2.2rem;
-    margin-bottom: 8px;
-}
+/* FILOSOFÍA */
 
-nav {
-    margin-top: 18px;
-}
-
-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 12px;
-    font-weight: bold;
-}
-
-nav a:hover {
-    color: #e7c873;
-}
-
-main {
-    max-width: 1000px;
-    margin: 35px auto;
-    padding: 0 20px;
-}
-
-section {
-    margin-bottom: 35px;
-}
-
-h2 {
-    color: #244b36;
-    margin-bottom: 15px;
-}
-
-button {
-    background-color: #b8793b;
-    color: white;
-    border: none;
-    padding: 12px 20px;
-    margin-top: 15px;
-    border-radius: 6px;
-    cursor: pointer;
-    font-size: 1rem;
-}
-
-button:hover {
-    background-color: #925a29;
-}
-
-#mensaje {
-    margin-top: 12px;
-    font-weight: bold;
-}
-
-footer {
-    background-color: #244b36;
-    color: white;
+.filosofia {
+    padding: 90px 20px;
     text-align: center;
-    padding: 20px;
-    margin-top: 40px;
+    background: var(--papel);
+}
+
+.filosofia .etiqueta {
+    margin-bottom: 14px;
+}
+
+.filosofia h2 {
+    max-width: 650px;
+    margin: 0 auto;
+    color: var(--verde);
+    font-size: clamp(32px, 4vw, 46px);
+}
+
+.filosofia > p:last-child {
+    max-width: 680px;
+    margin: 22px auto 0;
+    color: var(--texto-suave);
+    font-size: 15px;
+}
+
+/* CATÁLOGO */
+
+.catalogo {
+    padding: 80px 8% 86px;
+    background: var(--crema);
+}
+
+.titulo-seccion {
+    margin-bottom: 38px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 25px;
+}
+
+.titulo-seccion .etiqueta {
+    margin-bottom: 12px;
+}
+
+.titulo-seccion h2 {
+    max-width: 580px;
+    color: var(--verde);
+    font-size: clamp(32px, 4vw, 46px);
+}
+
+.titulo-seccion > p {
+    max-width: 240px;
+    margin: 0 0 4px;
+    color: var(--texto-suave);
+    font-size: 13px;
+}
+
+.libros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 25px;
+}
+
+.libro {
+    min-width: 0;
+    overflow: hidden;
+    background: var(--papel);
+    border: 1px solid var(--borde);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.libro:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sombra);
+}
+
+.portada {
+    min-height: 270px;
+    margin: 13px 13px 0;
+    padding: 25px 21px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    color: white;
+    box-shadow: inset 5px 0 rgba(0, 0, 0, 0.08);
+}
+
+.portada span {
+    font-size: 8px;
+    letter-spacing: 0.12em;
+}
+
+.portada strong {
+    font-family: Georgia, serif;
+    font-size: clamp(25px, 2.7vw, 35px);
+    font-weight: 500;
+    line-height: 1.14;
+}
+
+.portada small {
+    font-size: 9px;
+}
+
+.portada-uno {
+    background:
+        radial-gradient(ellipse at 85% 15%, rgba(233, 197, 174, 0.25), transparent 40%),
+        #375b49;
+}
+
+.portada-dos {
+    background:
+        radial-gradient(ellipse at 75% 20%, rgba(248, 245, 237, 0.22), transparent 35%),
+        #748363;
+}
+
+.portada-tres {
+    background:
+        radial-gradient(ellipse at 85% 15%, rgba(255, 255, 255, 0.18), transparent 38%),
+        #a95f43;
+}
+
+.libro-info {
+    padding: 20px 20px 24px;
+}
+
+.categoria {
+    margin: 0 0 8px;
+    color: var(--terracota);
+    font-size: 9px;
+    font-weight: 800;
+    letter-spacing: 0.15em;
+}
+
+.libro-info h3 {
+    margin: 0 0 9px;
+    color: var(--verde);
+    font-family: Georgia, serif;
+    font-size: 23px;
+    font-weight: 500;
+    line-height: 1.3;
+}
+
+.libro-info > p:last-child {
+    margin: 0;
+    color: var(--texto-suave);
+    font-size: 13px;
+    line-height: 1.8;
+}
+
+.nota-catalogo {
+    margin: 23px 0 0;
+    color: var(--texto-suave);
+    font-size: 11px;
+    text-align: center;
+}
+
+/* CIERRE */
+
+.cierre {
+    padding: 80px 20px;
+    background: var(--verde);
+    color: var(--crema);
+    text-align: center;
+}
+
+.cierre .etiqueta {
+    color: var(--terracota-claro);
+}
+
+.cierre h2 {
+    max-width: 650px;
+    margin: 0 auto;
+    font-size: clamp(34px, 4.5vw, 52px);
+}
+
+.cierre > p:not(.etiqueta) {
+    max-width: 500px;
+    margin: 20px auto 28px;
+    color: #e0e7dd;
+    font-size: 14px;
+}
+
+.boton-secundario {
+    border-color: var(--crema);
+    background: var(--crema);
+    color: var(--verde);
+}
+
+.boton-secundario:hover {
+    border-color: white;
+    background: white;
+    color: var(--verde-oscuro);
+}
+
+/* PIE DE PÁGINA */
+
+.pie-pagina {
+    padding: 32px 20px;
+    background: var(--verde-oscuro);
+    color: #e0e7dd;
+    text-align: center;
+}
+
+.marca-footer {
+    justify-content: center;
+    color: var(--crema);
+    font-family: Georgia, serif;
+    font-size: 22px;
+}
+
+.pie-pagina p {
+    margin: 8px 0;
+    font-size: 11px;
+}
+
+/* ADAPTACIÓN A TABLETAS Y CELULARES */
+
+@media (max-width: 850px) {
+    .encabezado {
+        padding: 18px 5%;
+        flex-wrap: wrap;
+    }
+
+    .navegacion {
+        gap: 18px;
+    }
+
+    .bienvenida {
+        padding: 65px 6%;
+        grid-template-columns: 1fr 0.8fr;
+        gap: 20px;
+    }
+
+    .libro-visual {
+        width: 155px;
+        min-height: 235px;
+        padding: 20px 15px;
+    }
+
+    .libro-visual strong {
+        font-size: 24px;
+    }
+
+    .libros-grid {
+        gap: 15px;
+    }
+
+    .portada {
+        min-height: 230px;
+        padding: 19px 15px;
+    }
+
+    .libro-info {
+        padding: 16px;
+    }
 }
 
 @media (max-width: 600px) {
-    header h1 {
-        font-size: 1.7rem;
+    .encabezado {
+        padding: 16px 5%;
+        justify-content: center;
+        gap: 17px;
     }
 
-    nav a {
-        display: inline-block;
-        margin: 6px;
+    .marca {
+        font-size: 12px;
+    }
+
+    .navegacion {
+        width: 100%;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 10px 20px;
+    }
+
+    .navegacion a {
+        font-size: 12px;
+    }
+
+    .bienvenida {
+        padding: 54px 7% 35px;
+        grid-template-columns: 1fr;
+        gap: 12px;
+    }
+
+    .bienvenida h1 {
+        font-size: clamp(39px, 11vw, 53px);
+    }
+
+    .texto-intro {
+        font-size: 14px;
+    }
+
+    .ilustracion-libros {
+        min-height: 300px;
+        max-width: 360px;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .libro-visual {
+        width: 165px;
+        min-height: 230px;
+    }
+
+    .libro-uno {
+        left: 9%;
+        top: 30px;
+    }
+
+    .libro-dos {
+        right: 8%;
+        bottom: 18px;
+    }
+
+    .sello {
+        right: 0;
+        width: 72px;
+        height: 72px;
+        font-size: 12px;
+    }
+
+    .filosofia {
+        padding: 65px 7%;
+    }
+
+    .filosofia h2,
+    .titulo-seccion h2 {
+        font-size: 35px;
+    }
+
+    .filosofia > p:last-child {
+        font-size: 14px;
+    }
+
+    .catalogo {
+        padding: 60px 6%;
+    }
+
+    .titulo-seccion {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .libros-grid {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+
+    .portada {
+        min-height: 285px;
+        padding: 27px;
+    }
+
+    .portada strong {
+        font-size: 36px;
+    }
+
+    .libro-info {
+        padding: 20px 22px 25px;
+    }
+
+    .cierre {
+        padding: 65px 7%;
+    }
+
+    .cierre h2 {
+        font-size: 37px;
+    }
+}
+
+/* RESPETO A LAS PREFERENCIAS DE MOVIMIENTO */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
     }
 }
