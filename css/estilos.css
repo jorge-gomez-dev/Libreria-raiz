@@ -669,3 +669,177 @@ a:focus-visible {
         transition-duration: 0.01ms !important;
     }
 }
+/* AJUSTE DE DISTRIBUCIÓN Y PORTADAS - RAÍZ */
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+html {
+    overflow-x: hidden;
+}
+
+body {
+    width: 100%;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.encabezado {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 18px;
+}
+
+.navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 22px;
+}
+
+.bienvenida {
+    width: 100%;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    align-items: center;
+    gap: 32px;
+}
+
+.bienvenida-contenido {
+    min-width: 0;
+}
+
+.bienvenida h1 {
+    overflow-wrap: break-word;
+}
+
+.ilustracion-libros {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 340px;
+    overflow: hidden;
+}
+
+.libro-visual {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    border-radius: 2px 7px 7px 2px;
+}
+
+.libro-uno {
+    background-color: #244638;
+    color: #f8f5ed;
+}
+
+.libro-dos {
+    background-color: #b96648;
+    color: #fffdf8;
+}
+
+.libros-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: stretch;
+    gap: 24px;
+}
+
+.libro {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.portada {
+    width: calc(100% - 26px);
+    min-width: 0;
+    min-height: 280px;
+    margin: 13px 13px 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    overflow: hidden;
+    overflow-wrap: anywhere;
+    border-radius: 2px 6px 6px 2px;
+    box-shadow: inset 5px 0 rgba(0, 0, 0, 0.10);
+}
+
+.portada-uno {
+    background-color: #375b49;
+    color: #fffdf8;
+}
+
+.portada-dos {
+    background-color: #748363;
+    color: #fffdf8;
+}
+
+.portada-tres {
+    background-color: #a95f43;
+    color: #fffdf8;
+}
+
+.portada span,
+.portada strong,
+.portada small {
+    position: relative;
+    z-index: 1;
+    max-width: 100%;
+}
+
+.libro-info {
+    flex: 1;
+    overflow-wrap: break-word;
+}
+
+.cierre,
+.filosofia,
+.catalogo {
+    width: 100%;
+    scroll-margin-top: 20px;
+}
+
+@media (max-width: 760px) {
+    .encabezado {
+        justify-content: center;
+    }
+
+    .navegacion {
+        justify-content: center;
+    }
+
+    .bienvenida {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 20px;
+    }
+
+    .ilustracion-libros {
+        max-width: 390px;
+        margin: 0 auto;
+    }
+
+    .libros-grid {
+        grid-template-columns: minmax(0, 1fr);
+        max-width: 430px;
+        margin: 0 auto;
+    }
+
+    .portada {
+        min-height: 300px;
+    }
+
+    .titulo-seccion {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+}
