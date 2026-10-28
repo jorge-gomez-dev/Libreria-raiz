@@ -872,3 +872,38 @@ body {
     font-size: 12px;
     font-style: italic;
 }
+/* CATÁLOGO COMPLEMENTARIO - RAÍZ */
+
+.catalogo-secundario {
+    margin-top: 64px;
+}
+
+.catalogo-secundario .seccion-encabezado {
+    max-width: 680px;
+    margin: 0 auto 32px;
+    text-align: center;
+}
+
+.catalogo-secundario .seccion-encabezado h2 {
+    margin: 8px 0 12px;
+}
+
+.catalogo-secundario .seccion-encabezado > p:last-child {
+    line-height: 1.7;
+}
+
+.catalogo-secundario .libros-grid {
+    margin-top: 28px;
+}
+
+.estado-lectura {
+    display: inline-block;
+    margin-top: 8px;
+    padding: 6px 10px;
+    border: 1px solid var(--verde, #315c46);
+    border-radius: 20px;
+    color: var(--verde, #315c46);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+}
