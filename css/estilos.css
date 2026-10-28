@@ -872,3 +872,90 @@ body {
     font-size: 12px;
     font-style: italic;
 }
+/* CORRECCIÓN SEGURA DE PORTADAS - RAÍZ */
+
+/* Tres portadas pequeñas del inicio */
+.ilustracion-libros {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+    min-height: 340px;
+    overflow: hidden;
+}
+
+.ilustracion-libros .libro-visual {
+    position: absolute;
+    width: 145px;
+    height: 215px;
+    min-height: 0;
+    padding: 0;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.ilustracion-libros .libro-visual img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    object-position: center;
+}
+
+.ilustracion-libros .libro-uno {
+    left: 0;
+    right: auto;
+    top: 65px;
+    bottom: auto;
+    z-index: 1;
+    transform: rotate(-7deg);
+}
+
+.ilustracion-libros .libro-dos {
+    left: 50%;
+    right: auto;
+    top: 85px;
+    bottom: auto;
+    z-index: 2;
+    transform: translateX(-50%);
+}
+
+.ilustracion-libros .libro-tres {
+    left: auto;
+    right: 0;
+    top: 65px;
+    bottom: auto;
+    z-index: 1;
+    transform: rotate(7deg);
+}
+
+.ilustracion-libros .sello {
+    z-index: 4;
+}
+
+@media (max-width: 600px) {
+    .ilustracion-libros {
+        min-height: 285px;
+        max-width: 360px;
+        margin: 0 auto;
+    }
+
+    .ilustracion-libros .libro-visual {
+        width: 29%;
+        height: 170px;
+    }
+
+    .ilustracion-libros .libro-uno {
+        left: 1%;
+        top: 60px;
+    }
+
+    .ilustracion-libros .libro-dos {
+        left: 50%;
+        top: 75px;
+    }
+
+    .ilustracion-libros .libro-tres {
+        right: 1%;
+        top: 60px;
+    }
+}
