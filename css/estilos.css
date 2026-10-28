@@ -242,7 +242,14 @@ a:focus-visible {
 .libro-visual small {
     font-size: 9px;
 }
-
+.libro-visual img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 270px;
+    object-fit: contain;
+    object-position: center;
+}
 .libro-uno {
     z-index: 2;
     left: 12%;
