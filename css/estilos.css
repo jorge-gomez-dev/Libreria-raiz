@@ -221,7 +221,7 @@ a:focus-visible {
     position: absolute;
     width: 190px;
     min-height: 270px;
-    padding: 0;
+    padding: 25px 19px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -242,14 +242,7 @@ a:focus-visible {
 .libro-visual small {
     font-size: 9px;
 }
-.libro-visual img {
-    display: block;
-    width: 100%;
-    height: auto;
-    max-height: 270px;
-    object-fit: contain;
-    object-position: center;
-}
+
 .libro-uno {
     z-index: 2;
     left: 12%;
@@ -849,4 +842,33 @@ body {
         align-items: flex-start;
         flex-direction: column;
     }
+}
+/* PORTADAS REALES DE LOS LIBROS - RAÍZ */
+
+.portada:has(img) {
+    display: block;
+    height: auto;
+    min-height: 0;
+    padding: 0;
+    background: var(--papel);
+    box-shadow: 0 5px 16px rgba(36, 70, 56, 0.12);
+}
+
+.portada img {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 3 / 4;
+    object-fit: contain;
+    object-position: center;
+    background: var(--papel);
+    border-radius: 2px 6px 6px 2px;
+}
+
+.libro-info .autor {
+    margin: 0 0 12px;
+    color: var(--texto-suave);
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 12px;
+    font-style: italic;
 }
