@@ -25,6 +25,7 @@ Estructura del proyecto
 Libreria-raiz/
 ├── css/
 │   └── estilos.css
+├── img/
 ├── index.html
 ├── README.md
 └── .gitattributes
