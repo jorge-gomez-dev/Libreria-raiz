@@ -21,10 +21,10 @@ Tecnologías utilizadas
 - GitHub Pages: publicación del sitio web estático.
 
 Estructura del proyecto
-
 Libreria-raiz/
 ├── css/
 │   └── estilos.css
+├── img/
 ├── index.html
 ├── README.md
 └── .gitattributes
