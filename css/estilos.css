@@ -872,3 +872,31 @@ body {
     font-size: 12px;
     font-style: italic;
 }
+
+
+/* SPRINT DE CIERRE: BLOG, EVENTOS Y FORMULARIO */
+.salto-contenido { position:absolute; left:-9999px; top:auto; }
+.salto-contenido:focus { left:12px; top:12px; z-index:1000; padding:10px 14px; background:var(--verde-oscuro); color:white; border-radius:8px; }
+.blog, .eventos, .contacto-formulario { width:100%; padding:58px 7%; scroll-margin-top:24px; }
+.blog { background:var(--crema); }
+.eventos { background:var(--papel); }
+.contacto-formulario { background:var(--verde-suave); }
+.blog-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:22px; }
+.entrada-blog { padding:26px; background:var(--papel); border:1px solid var(--borde); border-radius:14px; box-shadow:var(--sombra); }
+.entrada-blog h3, .evento h3 { margin:8px 0 10px; color:var(--verde); font-family:Georgia,"Times New Roman",serif; font-size:23px; line-height:1.25; }
+.entrada-blog p, .evento p { color:var(--texto-suave); }
+.fecha-publicacion, .detalle-evento { font-size:12px; font-weight:700; }
+.eventos-lista { display:grid; gap:16px; }
+.evento { display:grid; grid-template-columns:90px 1fr; gap:22px; padding:22px; border:1px solid var(--borde); border-radius:14px; background:var(--crema); }
+.fecha-evento { display:flex; flex-direction:column; align-items:center; justify-content:center; min-height:88px; border-radius:10px; background:var(--verde); color:var(--papel); }
+.fecha-evento span { font-family:Georgia,"Times New Roman",serif; font-size:32px; line-height:1; }
+.fecha-evento small { margin-top:8px; font-size:9px; letter-spacing:.08em; }
+.form-contacto { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:18px; max-width:820px; padding:28px; background:var(--papel); border:1px solid var(--borde); border-radius:16px; box-shadow:var(--sombra); }
+.campo-formulario { display:flex; flex-direction:column; gap:7px; }
+.campo-completo { grid-column:1 / -1; }
+.campo-formulario label { color:var(--verde-oscuro); font-size:13px; font-weight:800; }
+.campo-formulario input, .campo-formulario select, .campo-formulario textarea { width:100%; padding:12px 13px; border:1px solid var(--borde); border-radius:8px; background:#fff; color:var(--texto); font:inherit; }
+.campo-formulario input:focus, .campo-formulario select:focus, .campo-formulario textarea:focus { outline:3px solid var(--terracota-claro); border-color:var(--terracota); }
+.aviso-formulario, .estado-formulario { margin:12px 0 0; color:var(--texto-suave); font-size:12px; }
+.estado-formulario { color:var(--verde-oscuro); font-weight:800; }
+@media (max-width:760px) { .blog,.eventos,.contacto-formulario { padding:42px 6%; } .blog-grid { grid-template-columns:1fr; } .evento { grid-template-columns:68px 1fr; gap:14px; padding:16px; } .form-contacto { grid-template-columns:1fr; padding:20px; } .campo-completo { grid-column:auto; } }
